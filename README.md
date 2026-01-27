@@ -2,7 +2,7 @@
 
 A hybrid analytics platform (Web + Desktop) for visualizing chemical equipment parameters.
 
-#Deployemnt
+## Deployment
 http://140.245.19.236/
 
 ## Quick Setup
