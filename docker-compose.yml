@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: fosse-backend
+    volumes:
+      - ./backend:/app
+    expose:
+      - "8000"
+    environment:
+      - DEBUG=0
+      - SECRET_KEY=django-insecure-production-key-change-this
+      - ALLOWED_HOSTS=*
+
+  frontend:
+    build: ./frontend
+    container_name: fosse-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
