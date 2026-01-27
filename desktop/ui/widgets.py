@@ -53,7 +53,7 @@ class CustomTitleBar(QWidget):
         self.layout.setSpacing(0)
         
         # App Title/Icon area
-        self.title_label = QLabel("ChemVisualizer - Desktop")
+        self.title_label = QLabel("CEV - Desktop")
         self.title_label.setStyleSheet("color: #a3a3a3; font-weight: bold; font-size: 12px;")
         self.layout.addWidget(self.title_label)
         

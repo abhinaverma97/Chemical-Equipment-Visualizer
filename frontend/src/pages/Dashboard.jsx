@@ -17,8 +17,8 @@ const Dashboard = ({ onUploadSuccess }) => {
             await onUploadSuccess(); // Refresh list
             navigate(`/dataset/${response.data.id}`);
         } catch (err) {
-            console.error(err);
-            setError("Failed to upload file. Please check format.");
+            const errorMessage = err.response?.data?.error || "Failed to upload file. Please check format.";
+            setError(errorMessage);
         } finally {
             setIsUploading(false);
         }

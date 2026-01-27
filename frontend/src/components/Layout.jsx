@@ -16,7 +16,7 @@ const Sidebar = ({ datasets, onSelectDataset, onDeleteDataset }) => {
         }}>
             <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--border)' }}>
                 <h1 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
-                    ChemVisualizer
+                    CEV
                 </h1>
             </div>
 
