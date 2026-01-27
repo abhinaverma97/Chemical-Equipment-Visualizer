@@ -6,6 +6,7 @@ services:
     container_name: fosse-backend
     volumes:
       - ./backend:/app
+      - static_volume:/app/staticfiles
     expose:
       - "8000"
     environment:
@@ -18,5 +19,10 @@ services:
     container_name: fosse-frontend
     ports:
       - "80:80"
+    volumes:
+      - static_volume:/usr/share/nginx/html/static
     depends_on:
       - backend
+
+volumes:
+  static_volume:
