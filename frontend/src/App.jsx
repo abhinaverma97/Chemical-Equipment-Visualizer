@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import Layout from './components/Layout';
+import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/Dashboard';
 import Analytics from './pages/Analytics';
+import Login from './pages/Login';
 import * as api from './services/api';
 
 const AppContent = () => {
@@ -37,12 +39,29 @@ const AppContent = () => {
   };
 
   return (
-    <Layout datasets={datasets} onSelectDataset={handleSelectDataset} onDeleteDataset={handleDeleteDataset}>
-      <Routes>
-        <Route path="/" element={<Dashboard onUploadSuccess={fetchDatasets} />} />
-        <Route path="/dataset/:id" element={<Analytics />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Layout datasets={datasets} onSelectDataset={handleSelectDataset} onDeleteDataset={handleDeleteDataset}>
+              <Dashboard onUploadSuccess={fetchDatasets} />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/dataset/:id"
+        element={
+          <ProtectedRoute>
+            <Layout datasets={datasets} onSelectDataset={handleSelectDataset} onDeleteDataset={handleDeleteDataset}>
+              <Analytics />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 };
 
