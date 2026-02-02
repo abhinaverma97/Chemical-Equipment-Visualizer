@@ -95,7 +95,7 @@ const Login = () => {
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Enter username"
+              placeholder="admin"
             />
           </div>
           <div style={styles.formGroup}>
@@ -106,11 +106,11 @@ const Login = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter password"
+              placeholder="admin27"
             />
           </div>
-          <button 
-            style={styles.button} 
+          <button
+            style={styles.button}
             type="submit"
             onMouseOver={(e) => e.target.style.backgroundColor = 'var(--accent-hover)'}
             onMouseOut={(e) => e.target.style.backgroundColor = 'var(--accent)'}
