@@ -2,6 +2,10 @@
 
 A hybrid analytics platform (Web + Desktop) for visualizing chemical equipment parameters.
 
+## User Login
+Id - admin
+Password - admin27
+
 ## Deployment
 http://140.245.19.236/
 
