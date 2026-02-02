@@ -2,6 +2,9 @@
 
 A hybrid analytics platform (Web + Desktop) for visualizing chemical equipment parameters.
 
+## Deployment
+http://140.245.19.236/
+
 ## Quick Setup
 
 ### 1. Backend (Django)
